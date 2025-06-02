@@ -74,25 +74,14 @@ def RSADescriptografia(blocosCriptografados, p, q, d):
 
 # Chamadas para teste
 
+'''
 ϕn = totienteDeEuler(p, q)
 e = gerarE(ϕn)
 #print("E é igual:", e)
 d = gerarD(ϕn, e)
 #print("D é igual:", d)
 
-mensagem = """
-Era uma vez, em um mundo digital, um estudante chamado Mateus que adorava desafios de criptografia. Ele estudava algoritmos como AES, RSA, Diffie-Hellman e ficava fascinado com a ideia de proteger mensagens secretas contra bisbilhoteiros curiosos. 
-
-Em uma noite chuvosa, enquanto o trovão ecoava pela cidade, Mateus decidiu implementar sua própria versão do algoritmo RSA. "Será que consigo dividir mensagens em blocos, criptografar e depois recuperar tudo perfeitamente?", pensou. 
-
-Ele escreveu função após função — para gerar primos gigantes, calcular o totiente de Euler, encontrar o expoente público 'e', o expoente privado 'd', e claro, converter mensagens entre strings, inteiros e de volta. Tudo parecia promissor.
-
-Mas então... 💥 Um erro! Um simples caractere fora do padrão, um 'ã', fez tudo falhar. "Ah, os bytes malditos do UTF-8!", gritou ele com o teclado na mão e os olhos cheios de determinação. 
-
-Sem desistir, ajustou o tamanho dos blocos, corrigiu a conversão dos inteiros e adicionou verificações para evitar que os números ultrapassassem 'n'. E finalmente, como num passe de mágica, a mensagem secreta voltou ilesa, como se nunca tivesse sido embaralhada por fórmulas matemáticas complexas.
-
-Essa é a história de como a persistência codificou o sucesso — com matemática, coragem e um pouco de café.
-"""
+mensagem = "texte"
 
 blocosCriptografados = RSACriptografia(mensagem, e, n)
 
@@ -101,4 +90,4 @@ blocosCriptografados = RSACriptografia(mensagem, e, n)
 mensagemDescriptografada = RSADescriptografia(blocosCriptografados, p, q, d)
 
 print(mensagemDescriptografada)
-
+'''
