@@ -49,8 +49,9 @@ def reconstruçãoBlocos(blocos):
     
 # Chaves públicas (n, e)
 # Chaves privadas (p, q, d)
-    
-def RSACriptografia(mensagem, e, n):
+
+# Recebe String retorna blocos
+def RSACriptografiaBlocos(mensagem, e, n):
     
     blocos = separaçãoBlocos(mensagem, 21)
     
@@ -61,7 +62,17 @@ def RSACriptografia(mensagem, e, n):
         
     return blocosCriptografados
 
-def RSADescriptografia(blocosCriptografados, p, q, d):
+# Recebe String retorna String
+def RSACriptografiaString(mensagem, e, n):
+
+    blocosCriptografados = RSACriptografiaBlocos(mensagem, e, n)
+
+    blocosComoString = [str(bloco) for bloco in blocosCriptografados]
+    
+    return '|'.join(blocosComoString)
+
+# Recebe blocos, retorna String
+def RSADescriptografiaBlocos(blocosCriptografados, p, q, d):
     
     n = p * q
     
@@ -72,8 +83,16 @@ def RSADescriptografia(blocosCriptografados, p, q, d):
         
     return reconstruçãoBlocos(blocosDescriptografados)
 
-# Chamadas para teste
+# Recebe String, retorna String
+def RSADescriptografiaString(stringCriptografada, p, q, d):
 
+    blocos = stringCriptografada.split('|')
+
+    blocosInt = [int(bloco) for bloco in blocos]
+
+    return RSADescriptografiaBlocos(blocosInt, p, q, d)
+
+# Chamadas para teste
 '''
 ϕn = totienteDeEuler(p, q)
 e = gerarE(ϕn)
@@ -81,13 +100,23 @@ e = gerarE(ϕn)
 d = gerarD(ϕn, e)
 #print("D é igual:", d)
 
-mensagem = "texte"
+mensagem = "teste"
+'''
 
-blocosCriptografados = RSACriptografia(mensagem, e, n)
+'''
+blocosCriptografados = RSACriptografiaBlocos(mensagem, e, n)
 
 #print(blocosCriptografados)
 
-mensagemDescriptografada = RSADescriptografia(blocosCriptografados, p, q, d)
+mensagemDescriptografada = RSADescriptografiaBlocos(blocosCriptografados, p, q, d)
 
 print(mensagemDescriptografada)
+'''
+
+'''
+stringCriptografada = RSACriptografiaString(mensagem, e, n)
+print(stringCriptografada)
+
+stringDescriptografada = RSADescriptografiaString(stringCriptografada, p, q, d)
+print(stringDescriptografada)
 '''
