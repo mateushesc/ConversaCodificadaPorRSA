@@ -14,20 +14,6 @@ Este projeto simula uma comunicação segura utilizando criptografia **RSA** e a
 
 ---
 
-## 📁 Estrutura do Projeto
-
-ConversaCodificadaPorRSA/
-│
-├── RSA.py # Implementação do algoritmo RSA
-├── SHA256.py # Implementação do algoritmo SHA-256
-├── conversa_codificada.py # Script principal que executa a comunicação segura
-└── keys/
-├── chave_privada.txt # Chave privada do remetente
-└── chave_publica.txt # Chave pública do remetente
-
-
----
-
 ## ▶️ Como Executar
 
 1. Clone o repositório:
@@ -36,6 +22,7 @@ ConversaCodificadaPorRSA/
    cd ConversaCodificadaPorRSA'
 
 2. Execute o script principal:
+    ```bash
     python conversa_codificada.py
 
 ---
@@ -45,7 +32,6 @@ ConversaCodificadaPorRSA/
     Flask
 
 ---
-
 
 ## 📚 Conceitos Utilizados
     RSA: Criptografia assimétrica que permite proteger mensagens e validar remetentes
