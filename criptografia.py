@@ -46,10 +46,6 @@ def descriptografia_mensagem(mensagemCriptografada, e_recebido, n_recebido):
     
     return
 
-
-print(n)
-print(e)
-
 # Chamadas para teste
 
 '''
